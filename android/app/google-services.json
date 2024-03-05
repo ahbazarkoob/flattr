@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1088238810296",
+    "project_id": "flattr-76467",
+    "storage_bucket": "flattr-76467.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088238810296:android:25cb079f12815a2045b04d",
+        "android_client_info": {
+          "package_name": "com.example.pilot_web_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtfa5bab_5Nudv_XtJdOICEtneVUGlYc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
