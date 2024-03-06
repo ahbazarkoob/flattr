@@ -24,7 +24,7 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen>
     with TickerProviderStateMixin {
-  String urlLink = 'https://www.google.com/';
+  String urlLink = 'https://forms.gle/RgZxnbWZL5ib2FSq8';
   bool showConfirmation = false;
   bool showResponse = false;
   bool showResume = false;
@@ -49,34 +49,49 @@ class _SignUpScreenState extends State<SignUpScreen>
         body: Stack(children: [
           Align(
             alignment: Alignment.topCenter,
-            child: Container(
+            child: SizedBox(
               height: height * 0.65,
               width: 480,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  SignUpAppBar(),
-                  // const SizedBox(
-                  //   height: 40,
-                  // ),
-                  SignUpHeroWidget(),
+                  const SignUpAppBar(),
+                  const SignUpHeroWidget(),
                   showResume
-                      ? CustomButtonWidget(
-                          onPressed: () {
-                            setState(() {
-                              showResume = false;
-                              showConfirmation = false;
-                              showResponse = false;
-                            });
-                          },
-                          label: language.resume,
-                          width: 153)
+                      ? SizedBox(
+                          height: 125,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                            const SizedBox(
+                            height: 39,
+                            ),
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 12.0, bottom: 15),
+                                child: CustomButtonWidget(
+                                    onPressed: () {
+                                      setState(() {
+                                        showResume = false;
+                                        showConfirmation = false;
+                                        showResponse = false;
+                                      });
+                                    },
+                                    label: language.resume,
+                                    width: 153),
+                              ),
+                              const SizedBox(
+                                height: 3,
+                              )
+                            ],
+                          ),
+                        )
                       : const SizedBox(),
                   showConfirmation
                       ? OutlinedButton(
                           onPressed: () {},
                           style: ButtonStyle(
-                              side: MaterialStatePropertyAll(
+                              side: const MaterialStatePropertyAll(
                                   BorderSide(color: Colors.white)),
                               shape: MaterialStatePropertyAll(
                                   RoundedRectangleBorder(
@@ -94,72 +109,102 @@ class _SignUpScreenState extends State<SignUpScreen>
                             ),
                           ))
                       : showResponse
-                          ? Column(
-                              children: [
-                                Text(
-                                  language.didYouSubmitTheForm,
-                                  style: buttonTextStyleLarge.copyWith(
-                                      fontWeight: FontWeight.w800),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 12.0, bottom: 15),
-                                  child: SizedBox(
-                                    width: 125,
-                                    child: TextButton(
-                                      style: ButtonStyle(
-                                          backgroundColor:
-                                              const MaterialStatePropertyAll(
-                                                  white),
-                                          shape: MaterialStatePropertyAll(
-                                              RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12)))),
-                                      onPressed: () {
-                                        setState(() {
-                                          showConfirmation = true;
-                                        });
-                                      },
-                                      child: SizedBox(
-                                        height: 51,
-                                        child: Center(
-                                            child: Text(
-                                          language.yes,
-                                          style:
-                                              buttonTextStyleLarge.copyWith(
-                                                  color: const Color(
-                                                      0xff6D51E9)),
-                                        )),
+                          ? SizedBox(
+                              height: 125,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  SizedBox(
+                                    height: 23,
+                                    child: Text(
+                                      language.didYouSubmitTheForm,
+                                      style: buttonTextStyleLarge.copyWith(
+                                          fontWeight: FontWeight.w800),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 12.0, bottom: 15),
+                                    child: SizedBox(
+                                      width: 125,
+                                      child: TextButton(
+                                        style: ButtonStyle(
+                                            backgroundColor:
+                                                const MaterialStatePropertyAll(
+                                                    white),
+                                            shape: MaterialStatePropertyAll(
+                                                RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12)))),
+                                        onPressed: () {
+                                          setState(() {
+                                            showConfirmation = true;
+                                          });
+                                        },
+                                        child: SizedBox(
+                                          height: 51,
+                                          child: Center(
+                                              child: Text(
+                                            language.yes,
+                                            style:
+                                                buttonTextStyleLarge.copyWith(
+                                                    color: const Color(
+                                                        0xff6D51E9)),
+                                          )),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        showResume = true;
-                                        showResponse = false;
-                                      });
-                                    },
-                                    child: Text(
-                                      language.no,
-                                      style: buttonTextStyleLarge.copyWith(
-                                          color: Colors.white.withOpacity(0.7)),
-                                    ))
-                              ],
+                                  SizedBox(
+                                    height: 19,
+                                    child: GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            showResume = true;
+                                            showResponse = false;
+                                          });
+                                        },
+                                        child: Text(
+                                          language.no,
+                                          style: buttonTextStyleLarge.copyWith(
+                                              color: Colors.white
+                                                  .withOpacity(0.7)),
+                                        )),
+                                  )
+                                ],
+                              ),
                             )
                           : showResume
                               ? const SizedBox()
-                              : CustomButtonWidget(
-                                  label: language.joinOtherFlatmates,
-                                  width: 165,
-                                  onPressed: () {
-                                    launchUrlString(urlLink);
-                                    setState(() {
-                                      showResponse = true;
-                                    });
-                                  }),
-                  SizedBox(
+                              : SizedBox(
+                                  height: 125,
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      const SizedBox(
+                                        height: 23,
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 12, bottom: 15),
+                                        child: CustomButtonWidget(
+                                            label: language.joinOtherFlatmates,
+                                            width: 165,
+                                            onPressed: () {
+                                              launchUrlString(urlLink);
+                                              setState(() {
+                                                showResponse = true;
+                                              });
+                                            }),
+                                      ),
+                                      const SizedBox(
+                                        height: 19,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                  const SizedBox(
                     height: 10,
                   )
                 ],
