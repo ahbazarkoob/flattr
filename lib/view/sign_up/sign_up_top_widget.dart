@@ -26,14 +26,20 @@ class SignUpHeroWidget extends StatelessWidget {
             Text(language.findingYour,
                 style: textStyleExtraLarge),
             SizedBox(
-              width: 158,
+              width: 169,
               height: 40,
               child: AnimatedTextKit(
                   repeatForever: true,
                   stopPauseOnTap: true,
                   isRepeatingAnimation: true,
-                  pause: const Duration(seconds: 2),
+                  pause: const Duration(seconds: 3),
                   animatedTexts: [
+                    TyperAnimatedText(
+                      speed: Duration(
+                        milliseconds: 0
+                      ),
+                      ""
+                    ),
                     TyperAnimatedText(
                       speed: const Duration(
                         milliseconds: 100
@@ -45,13 +51,15 @@ class SignUpHeroWidget extends StatelessWidget {
                             milliseconds: 100
                         ),
                         language.funmate,
-                        textStyle: handwritingTextStyle),
+                        textStyle: handwritingTextStyle.copyWith(color: Color(0xffF0BD5A))),
                     TyperAnimatedText(
                         speed: const Duration(
                             milliseconds: 100
                         ),
                         language.workmate,
-                        textStyle: handwritingTextStyle)
+                        textStyle: handwritingTextStyle.copyWith(
+                            color: Color(0xffDB00FF)
+                        ))
                   ]),
             ),
             // Text(

@@ -1,7 +1,4 @@
-import 'package:flutter/animation.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:pilot_web_app/constants/text_styles.dart';
 import 'package:pilot_web_app/main.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -22,8 +19,7 @@ class SignUpScreen extends StatefulWidget {
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen>
-    with TickerProviderStateMixin {
+class _SignUpScreenState extends State<SignUpScreen> {
   String urlLink = 'https://forms.gle/RgZxnbWZL5ib2FSq8';
   bool showConfirmation = false;
   bool showResponse = false;
@@ -43,7 +39,6 @@ class _SignUpScreenState extends State<SignUpScreen>
           ),
         ),
       ),
-      // const BackgroundGradient(),
       Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(children: [
@@ -143,7 +138,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                                 });
                               },
                               child: SizedBox(
-                                height: 51,
+                                height: 40,
                                 child: Center(
                                     child: Text(
                                       language.yes,

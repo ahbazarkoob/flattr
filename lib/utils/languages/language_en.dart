@@ -11,7 +11,7 @@ class LanguageEn extends BaseLanguage {
   String get findingYour => "Finding your ";
 
   @override
-  String get flatmate => "flatmate";
+  String get flatmate => "flatmate  ";
 
   @override
   String get funmate => "funmate";

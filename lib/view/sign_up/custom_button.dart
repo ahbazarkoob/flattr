@@ -45,7 +45,7 @@ class _CustomButtonWidgetState extends State<CustomButtonWidget> {
           widget.onPressed();
         },
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          padding:  EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           child: Text(widget.label,
               style: buttonTextStyleLarge.copyWith(
                 color: Color(0xff6D51E9)

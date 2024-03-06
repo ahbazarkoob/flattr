@@ -1,5 +1,4 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pilot_web_app/utils/languages/base_model.dart';
 import 'package:pilot_web_app/utils/languages/language_en.dart';
