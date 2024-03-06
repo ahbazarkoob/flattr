@@ -59,151 +59,151 @@ class _SignUpScreenState extends State<SignUpScreen>
                   const SignUpHeroWidget(),
                   showResume
                       ? SizedBox(
-                          height: 125,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                            const SizedBox(
-                            height: 39,
-                            ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    top: 12.0, bottom: 15),
-                                child: CustomButtonWidget(
-                                    onPressed: () {
-                                      setState(() {
-                                        showResume = false;
-                                        showConfirmation = false;
-                                        showResponse = false;
-                                      });
-                                    },
-                                    label: language.resume,
-                                    width: 153),
-                              ),
-                              const SizedBox(
-                                height: 3,
-                              )
-                            ],
-                          ),
+                    height: 125,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        const SizedBox(
+                          height: 39,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 12.0, bottom: 15),
+                          child: CustomButtonWidget(
+                              onPressed: () {
+                                setState(() {
+                                  showResume = false;
+                                  showConfirmation = false;
+                                  showResponse = false;
+                                });
+                              },
+                              label: language.resume,
+                              width: 153),
+                        ),
+                        const SizedBox(
+                          height: 3,
                         )
+                      ],
+                    ),
+                  )
                       : const SizedBox(),
                   showConfirmation
                       ? OutlinedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                              side: const MaterialStatePropertyAll(
-                                  BorderSide(color: Colors.white)),
-                              shape: MaterialStatePropertyAll(
-                                  RoundedRectangleBorder(
-                                      borderRadius:
-                                          BorderRadius.circular(12)))),
+                      onPressed: () {},
+                      style: ButtonStyle(
+                          side: const MaterialStatePropertyAll(
+                              BorderSide(color: Colors.white)),
+                          shape: MaterialStatePropertyAll(
+                              RoundedRectangleBorder(
+                                  borderRadius:
+                                  BorderRadius.circular(12)))),
+                      child: SizedBox(
+                        height: 52,
+                        width: 250,
+                        child: Center(
+                          child: Text(
+                            language.yourInterestHasBeenGathered,
+                            style: buttonTextStyleLarge.copyWith(
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ))
+                      : showResponse
+                      ? SizedBox(
+                    height: 125,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        SizedBox(
+                          height: 23,
+                          child: Text(
+                            language.didYouSubmitTheForm,
+                            style: buttonTextStyleLarge.copyWith(
+                                fontWeight: FontWeight.w800),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 12.0, bottom: 15),
                           child: SizedBox(
-                            height: 52,
-                            width: 250,
-                            child: Center(
-                              child: Text(
-                                language.yourInterestHasBeenGathered,
-                                style: buttonTextStyleLarge.copyWith(
-                                    fontWeight: FontWeight.w800),
+                            width: 125,
+                            child: TextButton(
+                              style: ButtonStyle(
+                                  backgroundColor:
+                                  const MaterialStatePropertyAll(
+                                      white),
+                                  shape: MaterialStatePropertyAll(
+                                      RoundedRectangleBorder(
+                                          borderRadius:
+                                          BorderRadius.circular(
+                                              12)))),
+                              onPressed: () {
+                                setState(() {
+                                  showConfirmation = true;
+                                });
+                              },
+                              child: SizedBox(
+                                height: 51,
+                                child: Center(
+                                    child: Text(
+                                      language.yes,
+                                      style:
+                                      buttonTextStyleLarge.copyWith(
+                                          color: const Color(
+                                              0xff6D51E9)),
+                                    )),
                               ),
                             ),
-                          ))
-                      : showResponse
-                          ? SizedBox(
-                              height: 125,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  SizedBox(
-                                    height: 23,
-                                    child: Text(
-                                      language.didYouSubmitTheForm,
-                                      style: buttonTextStyleLarge.copyWith(
-                                          fontWeight: FontWeight.w800),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 12.0, bottom: 15),
-                                    child: SizedBox(
-                                      width: 125,
-                                      child: TextButton(
-                                        style: ButtonStyle(
-                                            backgroundColor:
-                                                const MaterialStatePropertyAll(
-                                                    white),
-                                            shape: MaterialStatePropertyAll(
-                                                RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12)))),
-                                        onPressed: () {
-                                          setState(() {
-                                            showConfirmation = true;
-                                          });
-                                        },
-                                        child: SizedBox(
-                                          height: 51,
-                                          child: Center(
-                                              child: Text(
-                                            language.yes,
-                                            style:
-                                                buttonTextStyleLarge.copyWith(
-                                                    color: const Color(
-                                                        0xff6D51E9)),
-                                          )),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 19,
-                                    child: GestureDetector(
-                                        onTap: () {
-                                          setState(() {
-                                            showResume = true;
-                                            showResponse = false;
-                                          });
-                                        },
-                                        child: Text(
-                                          language.no,
-                                          style: buttonTextStyleLarge.copyWith(
-                                              color: Colors.white
-                                                  .withOpacity(0.7)),
-                                        )),
-                                  )
-                                ],
-                              ),
-                            )
-                          : showResume
-                              ? const SizedBox()
-                              : SizedBox(
-                                  height: 125,
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      const SizedBox(
-                                        height: 23,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 12, bottom: 15),
-                                        child: CustomButtonWidget(
-                                            label: language.joinOtherFlatmates,
-                                            width: 165,
-                                            onPressed: () {
-                                              launchUrlString(urlLink);
-                                              setState(() {
-                                                showResponse = true;
-                                              });
-                                            }),
-                                      ),
-                                      const SizedBox(
-                                        height: 19,
-                                      )
-                                    ],
-                                  ),
-                                ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 19,
+                          child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  showResume = true;
+                                  showResponse = false;
+                                });
+                              },
+                              child: Text(
+                                language.no,
+                                style: buttonTextStyleLarge.copyWith(
+                                    color: Colors.white
+                                        .withOpacity(0.7)),
+                              )),
+                        )
+                      ],
+                    ),
+                  )
+                      : showResume
+                      ? const SizedBox()
+                      : SizedBox(
+                    height: 125,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        const SizedBox(
+                          height: 23,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 12, bottom: 15),
+                          child: CustomButtonWidget(
+                              label: language.joinOtherFlatmates,
+                              width: 165,
+                              onPressed: () {
+                                launchUrlString(urlLink);
+                                setState(() {
+                                  showResponse = true;
+                                });
+                              }),
+                        ),
+                        const SizedBox(
+                          height: 19,
+                        )
+                      ],
+                    ),
+                  ),
                   const SizedBox(
                     height: 10,
                   )

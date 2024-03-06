@@ -1,4 +1,27 @@
+import 'dart:ui' as ui;
+
+// shadow:
+//
+// 163D82, 30% opacity
+//
+// x:0, y:3, blur:0, spread:0
+//
+// 163D82, 30% opeacity
+
+// GradientText(
+// 'Hello Flutter',
+// style: const TextStyle(fontSize: 40),
+// gradient: LinearGradient(colors: [
+// Colors.blue.shade400,
+// Colors.blue.shade900,
+// ]),
+// ),
+
+import 'package:flutter/animation.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
 
 const heading = TextStyle(
     fontFamily: "Figtree",
@@ -15,13 +38,22 @@ const buttonTextStyle = TextStyle(
 const handwritingTextStyle = TextStyle(
   fontFamily: 'PermanentMarker',
   fontSize: 28,
-  fontWeight: FontWeight.w700,
-  color: Color(0xffA1E8ED),
+  color: Color(0xff69D6DD),
+  shadows: [
+    ui.Shadow(
+      offset: ui.Offset(0, 3),
+      color: Color(0xff163D82),
+      blurRadius: 0
+    )
+  ],
+  fontWeight: FontWeight.w600,
   letterSpacing: 2
 );
 
 const textStyleExtraLarge = TextStyle(
-    fontWeight: FontWeight.bold,
+  fontVariations: [
+    FontVariation.weight(700)
+  ],
     fontSize: 24,
     fontFamily: "Figtree",
     color: Colors.white);
@@ -33,7 +65,9 @@ const textStyleLarge = TextStyle(
     color: Colors.white);
 
 const buttonTextStyleLarge = TextStyle(
-    fontWeight: FontWeight.bold,
+    fontVariations: [
+      FontVariation.weight(700)
+    ],
     fontSize: 16,
-    fontFamily: "FigtreeBold",
+    fontFamily: "Figtree",
     color: Colors.white);

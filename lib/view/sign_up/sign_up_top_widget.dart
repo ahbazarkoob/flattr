@@ -1,11 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-
 import '../../constants/text_styles.dart';
 import '../../utils/languages/base_model.dart';
 import '../../utils/languages/language_en.dart';
 
-
+// 7CF0B8
 BaseLanguage language = LanguageEn();
 
 class SignUpHeroWidget extends StatelessWidget {
@@ -17,6 +16,9 @@ class SignUpHeroWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(
+          height: 36,
+        ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -30,32 +32,32 @@ class SignUpHeroWidget extends StatelessWidget {
                   repeatForever: true,
                   stopPauseOnTap: true,
                   isRepeatingAnimation: true,
-                  pause: Duration(milliseconds: 1),
+                  pause: const Duration(seconds: 2),
                   animatedTexts: [
                     TyperAnimatedText(
-                      speed: Duration(
-                        milliseconds: 300
+                      speed: const Duration(
+                        milliseconds: 100
                       ),
                         language.flatmate,
                         textStyle: handwritingTextStyle),
                     TyperAnimatedText(
-                        speed: Duration(
-                            milliseconds: 300
+                        speed: const Duration(
+                            milliseconds: 100
                         ),
                         language.funmate,
                         textStyle: handwritingTextStyle),
                     TyperAnimatedText(
-                        speed: Duration(
-                            milliseconds: 300
+                        speed: const Duration(
+                            milliseconds: 100
                         ),
                         language.workmate,
                         textStyle: handwritingTextStyle)
                   ]),
             ),
-            Text(
-              ',',
-              style: textStyleExtraLarge,
-            )
+            // Text(
+            //   ',',
+            //   style: textStyleExtraLarge,
+            // )
           ],
         ),
         Text(

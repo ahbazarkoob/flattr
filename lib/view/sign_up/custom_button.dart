@@ -44,17 +44,14 @@ class _CustomButtonWidgetState extends State<CustomButtonWidget> {
         onPressed: () {
           widget.onPressed();
         },
-        child: SizedBox(
-          height: 52,
-          width: widget.width,
-          child: Center(
-            child: Text(widget.label,
-                style: buttonTextStyleLarge.copyWith(
-                    color: buttonTextColor,
-                )),
-          ),
+        child: Padding(
+          padding:  EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          child: Text(widget.label,
+              style: buttonTextStyleLarge.copyWith(
+                color: Color(0xff6D51E9)
+              ),
+              )),
         ),
-      ),
-    );
+      );
   }
 }

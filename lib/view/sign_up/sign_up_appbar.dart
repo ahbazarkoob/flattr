@@ -16,36 +16,42 @@ class SignUpAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(top: 15.0, left: 24),
-          child: SvgPicture.asset('assets/images/logo.svg'),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            top: 15.0,
-            right: 24.0,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              SizedBox(
-                height: 30,
-                width: 75,
-                child: OutlinedButton(
-                    style: const ButtonStyle(
-                        side: MaterialStatePropertyAll(
-                            BorderSide(color: white))),
-                    onPressed: () {},
-                    child: Text(language.beta,
-                        style: buttonTextStyle)),
+    return Align(
+      alignment: Alignment.topCenter,
+      child: Container(
+        width: 480,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 15.0, left: 24),
+              child: SvgPicture.asset('assets/images/logo.svg'),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 15.0,
+                right: 24.0,
               ),
-            ],
-          ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  SizedBox(
+                    height: 30,
+                    width: 75,
+                    child: OutlinedButton(
+                        style: const ButtonStyle(
+                            side: MaterialStatePropertyAll(
+                                BorderSide(color: white))),
+                        onPressed: () {},
+                        child: Text(language.beta,
+                            style: buttonTextStyle)),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

@@ -27,7 +27,7 @@ class LanguageEn extends BaseLanguage {
       'Curated community of selectively \n filtered crowd in Bengaluru.';
 
   @override
-  String get joinOtherFlatmates => 'Join Other Flatmates!';
+  String get joinOtherFlatmates => 'Join Other Flatmates';
 
   @override
   String get profilesToSelectFrom => '2500+ profiles to select from';

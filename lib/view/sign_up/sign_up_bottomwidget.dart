@@ -15,6 +15,7 @@ class BottomWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      transform: Matrix4.translationValues(0.0, 24.0, 0.0),
       width: 480,
       child: Column(
         children: [
@@ -42,12 +43,12 @@ class BottomWidget extends StatelessWidget {
               reverse: true,
               scrollDirection: Axis.horizontal,
 
-              height: 90,
-              viewportFraction: 0.29,
-              aspectRatio: 16 / 7,),
-          )
-        ],
-      ),
+                height: 90,
+                viewportFraction: 0.29,
+                aspectRatio: 16 / 7,),
+            )
+          ],
+        ),
     );
   }
 }
